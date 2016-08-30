@@ -1,3 +1,5 @@
+default: build
+
 build:
 	docker-compose build app
 
