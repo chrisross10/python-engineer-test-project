@@ -4,3 +4,11 @@ app:
     - .:/opt/code
   ports:
    - "5000:5000"
+  links:
+   - db:postgres
+
+db:
+  restart: always
+  image: postgres:latest
+  ports:
+    - "5432:5432"
