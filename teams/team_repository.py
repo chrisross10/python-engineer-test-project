@@ -14,4 +14,4 @@ ON DUPLICATE KEY UPDATE
     engine.execute(text(sql),
                    id=label['id'],
                    name=label['name']
-)
+                  )
