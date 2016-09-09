@@ -1,9 +1,14 @@
 import unittest
 import teams.team_repository as team_repo
-from tests.integration.test_data import TEAMS
 import tests.integration.db_helper as db_helper
 
 class TeamRepositoryTests(unittest.TestCase):
+
+    TEAMS = {
+        'id': 0,
+        'name': 'dev-team',
+    }
+
     def setUp(self):
         db_helper.clear_all_tables()
 
