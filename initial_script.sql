@@ -5,3 +5,9 @@ CREATE DATABASE osl
   LC_COLLATE = 'C'
   LC_CTYPE = 'C'
   CONNECTION LIMIT = -1;
+
+
+CREATE TABLE public.team (
+  id serial PRIMARY KEY,
+  name varchar(100) NOT NULL UNIQUE
+);
