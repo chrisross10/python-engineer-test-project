@@ -19,3 +19,14 @@ lint:
 	docker-compose run \
 	$(DOCKER_TAG) \
 	pylint --rcfile=.pylintrc tests teams *.py
+
+run_db:
+	docker run \
+	-p 5433:5432 \
+	-e POSTGRES_USER=chrisr \
+	-e POSTGRES_PASSWORD=chrisr \
+	-e POSTGRES_DB=chrisr \
+	postgres_db
+
+build_db:
+	docker build -t postgres_db -f Dockerfile.db .
