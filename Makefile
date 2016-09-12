@@ -20,6 +20,11 @@ lint:
 	$(DOCKER_TAG) \
 	pylint --rcfile=.pylintrc tests teams *.py
 
+db: build_db run_db
+
+build_db:
+	docker build -t postgres_db -f Dockerfile.db .
+
 run_db:
 	docker run \
 	-p 5433:5432 \
@@ -28,5 +33,3 @@ run_db:
 	-e POSTGRES_DB=chrisr \
 	postgres_db
 
-build_db:
-	docker build -t postgres_db -f Dockerfile.db .
