@@ -10,8 +10,8 @@ def get_records(table_name):
 
 def clear_all_tables():
     all_tables = [
-        'teams',
-        'user',
+        'team',
+        'member',
         'company'
     ]
 
