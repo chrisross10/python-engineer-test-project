@@ -9,6 +9,10 @@ app:
 
 db:
   restart: always
-  image: postgres:latest
+  image: postgres_db:latest
   ports:
     - "5432:5432"
+  environment:
+    - POSTGRES_USER=chrisr
+    - POSTGRES_PASSWORD=chrisr
+    - POSTGRES_DB=chrisr
